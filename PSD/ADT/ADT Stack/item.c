@@ -14,5 +14,5 @@ void input_item(Item *item)
 
 void output_item(Item item)
 {
-    printf("%d",item);
+    printf("%d\n",item);
 }
