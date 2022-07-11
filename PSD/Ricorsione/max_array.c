@@ -7,10 +7,10 @@ int max(int a,int b)
 	return b;
 }
 
-int maxA(int a[],int len,int m)
+int maxA(int a[],int len)
 {
-	if(len == 0) return a[0];
-	return max(m,maxA(a,len-1,a[len-1]));
+	if(len == 1) return a[0];
+	return max(a[len-1],maxA(a,len-1));
 }
 
 int main(void)
