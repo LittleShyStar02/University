@@ -1,0 +1,43 @@
+Funzione addizione
+
+- Creare una funzione divisione(n1,n2) che prende in input due numeri
+interi positivi n1 e n2, e che divide n1 per n2.
+La funzione deve essere svolta con la ricorsione
+
+
+Specifica sintattica
+  
+  Tipi usati:
+    - integer
+
+  divisione(n1,n2) -> integer
+
+Specifica semantica
+
+  divisione(n1,n2) -> n'
+  
+  Condizioni:
+    Pre:
+	  - n1 deve essere maggiore o uguale di 0
+	  - n2 deve essere maggiore 0
+	Post:
+	  - n' deve risultare il rapporto tra n1 e n2 (n1*n2)
+
+
+Progettazione  
+
+  Pseudocodifica
+
+  divisione(n1,n2)  
+	SE n1 = 0 ALLORA RESTITUISCI 0;
+	SE n2 > n1 ALLORA RESTITUISCI 0;
+	return 1 + divisione(n1-n2,n2);
+	
+Codifica
+  
+  int divisione(int n1,int n2)
+  {
+	if(n1 == 0) return 0;
+	if(n2 > n1) return 0;
+	return 1 + divisione(n1-n2,n2);
+  }

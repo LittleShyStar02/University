@@ -1,0 +1,42 @@
+Funzione addizione
+
+- Creare una funzione sottrazione(n1,n2) che prende in input due numeri
+interi positivi e ne restituisce la differenza. La funzione deve essere svolta
+con la ricorsione
+
+
+Specifica sintattica
+  
+  Tipi usati:
+    - integer
+
+  sottrazione(n1,n2) -> integer
+
+Specifica semantica
+
+  sottrazione(n1,n2) -> n'
+  
+  Condizioni:
+    Pre:
+	  - n1 deve essere maggiore di n2
+	  - n1 deve essere maggiore o uguale di 0
+	  - n2 deve essere maggiore o uguale di 0
+	Post:
+	  - n' deve risultare la differenza tra n1 e n2 (n1-n2)
+
+
+Progettazione
+
+  Pseudocodifica
+
+  sottrazione(n1,n2)
+    SE n2 = 0 ALLORA RESTITUISCI n1;
+	RESTITUISCI sottrazione(n1,n2-1) - 1;
+	
+Codifica
+  
+  int sottrazione(int n1,int n2)
+  {
+	if(n2==0) return n1;
+	return sottrazione(n1,n2-1) - 1;
+  }

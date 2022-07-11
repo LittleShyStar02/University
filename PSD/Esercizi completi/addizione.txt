@@ -1,0 +1,51 @@
+Funzione addizione
+
+- Creare una funzione addizione(n1,n2) che prende in input due numeri
+interi positivi e ne restituisce la somma. La funzione deve essere svolta
+con la ricorsione
+
+
+Specifica sintattica
+  
+  Tipi usati:
+    - integer
+
+  addizione(n1,n2) -> integer
+
+Specifica semantica
+
+  addizione(n1,n2) -> n'
+  
+  Condizioni:
+    Pre:
+	  - n1 deve essere maggiore o uguale di 0
+	  - n2 deve essere maggiore o uguale di 0
+	Post:
+	  - n' deve risultare la somma tra n1 e n2 (n1+n2)
+
+
+Progettazione
+
+Sappiamo che un numero n può essere scritto come n = (n-1) + 1
+quindi ricorsivamente avremo
+
+n = (n-1) + 1 = (n-2) + 1 + 1 = ... = 1 + 1 + ... + 1
+                                      ---------------
+									      n volte
+										  
+In questo abbiamo solamente un numero quindi avremo
+una base f(0) = 0, se sommiamo come da traccia n1 e n2
+la base avrà n1 se n2 è coinvolto nel passo ricorsivo
+e viceversa. Noi useremo nel passo ricorsivo n2.
+
+  addizione(n1,n2)
+    SE n2 = 0 ALLORA RESTITUISCI n1;
+	RESTITUISCI 1 + addizione(n1,n2-1);
+	
+Codifica
+  
+  int addizione(int n1,int n2)
+  {
+    if(n2 == 0) return n1;
+	return addizione(n1,n2-1);
+  }

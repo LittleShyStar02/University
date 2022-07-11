@@ -1,0 +1,44 @@
+Funzione max array
+
+- Creare una funzione max_array(a[],len) che restituisce
+l'elemento massimo di un array. Da svolgere ricorsivamente.
+
+- funzione max(a,b) restituisce il massimo tra a e b utilizzabile
+
+
+Specifica sintattica
+  
+  Tipi di riferimento:
+    - array
+  Tipi usati:
+    - integer
+
+  max_array(a[],len) -> integer
+
+Specifica semantica
+
+  max_array(a[],len) -> n
+  
+  Condizioni:
+    Pre:
+	  - a non deve essere vuoto
+	  - len diversa da 0
+	Post:
+	  - n deve risultare l'elemento massimo dell'array
+
+
+Progettazione
+
+  Pseudocodice
+  
+  max_array(a[],len)
+    SE len = 1 ALLORA RESTITUISCI a[0];
+	RESTITUISCI max(a[len-1],max_array(a,len-1));
+	
+Codifica
+  
+  int maxA(int a[],int len)
+  {
+	if(len == 1) return a[0];
+	return max(a[len-1],maxA(a,len-1));
+  }

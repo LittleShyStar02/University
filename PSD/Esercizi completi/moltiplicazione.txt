@@ -1,0 +1,47 @@
+Funzione addizione
+
+- Creare una funzione moltiplicazione(n1,n2) che prende in input due numeri
+interi positivi e ne restituisce il prodotto. La funzione deve essere svolta
+con la ricorsione
+
+
+Specifica sintattica
+  
+  Tipi usati:
+    - integer
+
+  moltiplicazione(n1,n2) -> integer
+
+Specifica semantica
+
+  moltiplicazione(n1,n2) -> n'
+  
+  Condizioni:
+    Pre:
+	  - n1 deve essere maggiore o uguale di 0
+	  - n2 deve essere maggiore o uguale di 0
+	Post:
+	  - n' deve risultare il prodotto tra n1 e n2 (n1*n2)
+
+
+Progettazione
+
+  Sappiamo che un prodotto n1*n2 è uguale a somma n2, n1 volte.
+  
+  p = n1*n2 = n2 + n2 + ... + n2
+              ------------------
+			       n1 volte
+
+  Pseudocodifica
+
+  moltiplicazione(n1,n2)
+    SE n1 = 0 ALLORA RESTITUISCI 0;
+	RESTITUISCI n2 + moltiplicazione(n1-1,n2);
+	
+Codifica
+  
+  int moltiplicazione(int n1,int n2)
+  {
+	if (n1 == 0) return 0;
+    return n2 + moltiplicazione(n1-1,n2);
+  }

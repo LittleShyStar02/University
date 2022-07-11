@@ -1,0 +1,43 @@
+Funzione addizione
+
+- Creare una funzione modulo(n1,n2) che prende in input due numeri
+interi positivi n1 e n2, e che divide n1 per n2 e restituisce il resto della divisione.
+La funzione deve essere svolta con la ricorsione
+
+
+Specifica sintattica
+  
+  Tipi usati:
+    - integer
+
+  modulo(n1,n2) -> integer
+
+Specifica semantica
+
+  modulo(n1,n2) -> n'
+  
+  Condizioni:
+    Pre:
+	  - n1 deve essere maggiore o uguale di 0
+	  - n2 deve essere maggiore 0
+	Post:
+	  - n' deve risultare il resto della divisione tra n1 e n2 (n1*n2)
+
+
+Progettazione  
+
+  Pseudocodifica
+
+  modulo(n1,n2)  
+	SE n1 = 0 ALLORA RESTITUISCI 0;
+	SE n2 > n1 ALLORA RESTITUISCI n1;
+	return modulo(n1-n2,n2);
+	
+Codifica
+  
+  int modulo(int n1,int n2)
+  {
+	if(n1 == 0) return 0;
+	if(n2 > n1) return n1;
+	return modulo(n1-n2,n2);
+  }
